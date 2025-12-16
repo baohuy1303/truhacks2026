@@ -1,0 +1,36 @@
+
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: "Outfit", "sans-serif";
+  --font-display: "Space Grotesk", "sans-serif";
+
+  /* Arcade Color Palette */
+  --color-arcade-900: #1a0b2e;
+  --color-arcade-800: #2d1b4e;
+  --color-arcade-700: #432c7a;
+  --color-arcade-500: #764ba2;
+  --color-arcade-300: #a27ec6;
+  --color-arcade-100: #e0d4fc;
+
+  /* Neon Accents */
+  --color-arcade-neon: #ff00ff;
+  --color-arcade-cyan: #00ffff;
+}
+
+body {
+  background-color: #03091C;
+  color: #e0d4fc;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #1a0b2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #432c7a;
+  border-radius: 4px;
+}
+      
