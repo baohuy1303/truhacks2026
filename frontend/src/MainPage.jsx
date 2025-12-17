@@ -7,7 +7,7 @@ import { Navbar } from './Navbar'
 
 const AboutSection = () => {
     return (
-        <section className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto">
+        <section id='about' className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
                 {/* Left: Text Content */}
                 <motion.div
@@ -168,7 +168,7 @@ const tracks = [
 
 const TracksSection = () => {
     return (
-        <section className="py-12 sm:py-16 md:py-24 relative">
+        <section id='tracks' className="py-12 sm:py-16 md:py-24 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div className="text-center mb-8 sm:mb-16">
                     <span className="text-arcade-neon text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
@@ -212,7 +212,7 @@ const TracksSection = () => {
 
 const PrizesSection = () => {
     return (
-        <section className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden">
+        <section id='prizes' className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden">
             {/* Background Decorative Grid */}
 
             <div className="max-w-6xl mx-auto relative z-10">
@@ -307,7 +307,7 @@ const PrizeCard = ({ place, title, prize, items, color, delay }) => (
 
 const SponsorsSection = () => {
     return (
-        <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10">
+        <section id='sponsors' className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10">
             <div className="max-w-7xl mx-auto text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -484,7 +484,7 @@ const team = [
 
 const TeamSection = () => {
     return (
-        <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10">
+        <section id='team' className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 sm:mb-16">
                     <span className="text-arcade-100/50 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
