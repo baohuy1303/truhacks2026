@@ -1,13 +1,40 @@
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
-import { motion, useAnimate } from 'framer-motion'
-import { Terminal, Users, Cpu, HeartPulse, Globe, Gamepad2, Rocket, Ship, Space, Lightbulb, ArrowRight, Calendar, MapPin} from 'lucide-react'
-import { useState, useEffect } from 'react'
-import React from 'react'
-import { Navbar } from './Navbar'
+import { motion, useAnimate, AnimatePresence } from 'framer-motion'
+import {
+    Terminal,
+    Users,
+    Cpu,
+    HeartPulse,
+    Globe,
+    Gamepad2,
+    Rocket,
+    Ship,
+    Space,
+    Lightbulb,
+    ArrowRight,
+    Calendar,
+    MapPin,
+    Link,
+    Minus,
+    Plus,
+    Trophy,
+    Handshake,
+    Target,
+    Lock
+} from 'lucide-react';
+import { useState, useEffect } from 'react';
+import React from 'react';
+import { Navbar } from './Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDev, faDiscord, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBriefcase, faCode, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 
 const AboutSection = () => {
     return (
-        <section id='about' className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto">
+        <section
+            id="about"
+            className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto"
+        >
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
                 {/* Left: Text Content */}
                 <motion.div
@@ -18,7 +45,6 @@ const AboutSection = () => {
                     className="w-full lg:w-1/2"
                 >
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 sm:w-12 h-1 bg-arcade-neon"></div>
                         <span className="text-arcade-300 uppercase tracking-widest font-bold text-xs sm:text-sm">
                             About Us
                         </span>
@@ -32,7 +58,7 @@ const AboutSection = () => {
                     </h2>
                     <p className="text-arcade-100/70 text-base sm:text-lg leading-relaxed mb-6 font-sans">
                         TruHacks is a 36-hour creative marathon where students
-                        from across the midwest gather to build the
+                        from across the country gather to build the
                         extraordinary. Whether you're a seasoned developer or a
                         first-time hacker, grab a joystick and start building.
                     </p>
@@ -44,7 +70,7 @@ const AboutSection = () => {
                         />
                         <Feature
                             icon={<Users className="text-arcade-cyan" />}
-                            title="100+ Hackers"
+                            title="Meet Hackers"
                             desc="Collaborate and network"
                         />
                         <Feature
@@ -168,7 +194,7 @@ const tracks = [
 
 const TracksSection = () => {
     return (
-        <section id='tracks' className="py-12 sm:py-16 md:py-24 relative">
+        <section id="tracks" className="py-12 sm:py-16 md:py-24 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div className="text-center mb-8 sm:mb-16">
                     <span className="text-arcade-neon text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
@@ -212,7 +238,10 @@ const TracksSection = () => {
 
 const PrizesSection = () => {
     return (
-        <section id='prizes' className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden">
+        <section
+            id="prizes"
+            className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden"
+        >
             {/* Background Decorative Grid */}
 
             <div className="max-w-6xl mx-auto relative z-10">
@@ -307,7 +336,10 @@ const PrizeCard = ({ place, title, prize, items, color, delay }) => (
 
 const SponsorsSection = () => {
     return (
-        <section id='sponsors' className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10">
+        <section
+            id="sponsors"
+            className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10"
+        >
             <div className="max-w-7xl mx-auto text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -398,10 +430,16 @@ const SponsorImage = ({ src, alt, size = 'large' }) => {
 
 const SignUpSection = () => {
     return (
-        <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10 bg-arcade-900/50">
-            <div className="max-w-4xl mx-auto relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-arcade-neon to-arcade-cyan rounded-2xl blur opacity-30"></div>
-                <div className="relative bg-arcade-800 border border-white/10 rounded-2xl p-6 sm:p-8 md:p-12 text-center overflow-hidden">
+        <section
+            id="sign-up"
+            className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10 bg-arcade-900/50"
+        >
+            <div className="max-w-4xl mx-auto relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-arcade-neon to-arcade-cyan rounded-2xl blur opacity-30 
+                transition-transform duration-300
+                group-hover:scale-105"></div>
+                <div className="relative bg-arcade-800 border border-white/10 rounded-2xl p-6 sm:p-8 md:p-12 text-center overflow-hidden
+                hover:scale-105 duration-300">
                     {/* Background Scanlines */}
 
                     <div className="relative z-10">
@@ -412,6 +450,31 @@ const SignUpSection = () => {
                             Registration is open for all university students.
                             Secure your spot now!
                         </p>
+                        <div className="flex flex-col md:flex-row gap-4 mb-5 items-center justify-center">
+                            <button onClick={() => window.open('https://discord.gg/xyZvHBAKT', '_blank')} 
+                            className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all ">
+                                <FontAwesomeIcon
+                                    icon={faDiscord}
+                                    className="w-5 h-5"
+                                />
+                                TruHacks Discord
+                            </button>
+                            <button onClick={() => window.open('https://devpost.com/truhacks', '_blank')} 
+                            className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+                                <FontAwesomeIcon
+                                    icon={faDev}
+                                    className="w-5 h-5"
+                                />
+                                Devpost
+                            </button>
+                            <button className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+                                <FontAwesomeIcon
+                                    icon={faCode}
+                                    className="w-5 h-5"
+                                />
+                                GDSC Discord
+                            </button>
+                        </div>
 
                         <form
                             className="max-w-md mx-auto flex items-center justify-center"
@@ -427,6 +490,13 @@ const SignUpSection = () => {
                                 />
                             </button>
                         </form>
+                        <div className="flex gap-3 items-center justify-center mt-4">
+                            <a href="https://sites.google.com/truman.edu/truhacks/home" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Code of Conduct</a>
+                            <p className="text-arcade-100/60">•</p>
+                            <a href="https://www.truman.edu/policies/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Truman State Policies</a>
+                            <p className="text-arcade-100/60">•</p>
+                            <a href="https://titleix.truman.edu/statement-on-nondiscrimination/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Title IX</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -484,7 +554,10 @@ const team = [
 
 const TeamSection = () => {
     return (
-        <section id='team' className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10">
+        <section
+            id="team"
+            className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 relative z-10"
+        >
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 sm:mb-16">
                     <span className="text-arcade-100/50 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
@@ -529,97 +602,114 @@ const TeamSection = () => {
     );
 };
 
-const GlitchText = ({ 
-  text, 
-  className = "", 
-  delay = 0, 
-  subtle = false,
-  persistent = true 
+const GlitchText = ({
+    text,
+    className = '',
+    delay = 0,
+    subtle = false,
+    persistent = true,
 }) => {
-  const [scope, animate] = useAnimate();
-  const [isGlitching, setIsGlitching] = useState(true);
+    const [scope, animate] = useAnimate();
+    const [isGlitching, setIsGlitching] = useState(true);
 
-  useEffect(() => {
-    const sequence = async () => {
-      // Initial state: Invisible and distorted
-      await animate(scope.current, { opacity: 0, scale: 0.9, filter: "blur(10px)" }, { duration: 0 });
-      
-      // Wait for delay
-      await new Promise(resolve => setTimeout(resolve, delay * 1000));
+    useEffect(() => {
+        const sequence = async () => {
+            // Initial state: Invisible and distorted
+            await animate(
+                scope.current,
+                { opacity: 0, scale: 0.9, filter: 'blur(10px)' },
+                { duration: 0 }
+            );
 
-      // Glitch In Sequence
-      // Step 1: Flash in with high skew and blur
-      animate(scope.current, { opacity: 1 }, { duration: 0.1 });
-      
-      // Rapid random glitch frames
-      const loops = subtle ? 3 : 5;
-      for (let i = 0; i < loops; i++) {
-        await animate(scope.current, { 
-          skewX: Math.random() * 20 - 10,
-          x: Math.random() * 10 - 5,
-          scale: 1 + Math.random() * 0.1,
-          filter: `blur(${Math.random() * 2}px) hue-rotate(${Math.random() * 90}deg)`,
-        }, { duration: 0.05 });
-      }
+            // Wait for delay
+            await new Promise((resolve) => setTimeout(resolve, delay * 1000));
 
-      // Step 2: Stabilize
-      await animate(scope.current, { 
-        skewX: 0, 
-        x: 0, 
-        scale: 1, 
-        filter: "blur(0px) hue-rotate(0deg)" 
-      }, { duration: 0.2, ease: "circOut" });
-      
-      setIsGlitching(false);
+            // Glitch In Sequence
+            // Step 1: Flash in with high skew and blur
+            animate(scope.current, { opacity: 1 }, { duration: 0.1 });
+
+            // Rapid random glitch frames
+            const loops = subtle ? 3 : 5;
+            for (let i = 0; i < loops; i++) {
+                await animate(
+                    scope.current,
+                    {
+                        skewX: Math.random() * 20 - 10,
+                        x: Math.random() * 10 - 5,
+                        scale: 1 + Math.random() * 0.1,
+                        filter: `blur(${Math.random() * 2}px) hue-rotate(${
+                            Math.random() * 90
+                        }deg)`,
+                    },
+                    { duration: 0.05 }
+                );
+            }
+
+            // Step 2: Stabilize
+            await animate(
+                scope.current,
+                {
+                    skewX: 0,
+                    x: 0,
+                    scale: 1,
+                    filter: 'blur(0px) hue-rotate(0deg)',
+                },
+                { duration: 0.2, ease: 'circOut' }
+            );
+
+            setIsGlitching(false);
+        };
+
+        sequence();
+    }, [animate, delay, scope, subtle]);
+
+    // CSS Variables for styling the keyframes
+    const styleVars = {
+        '--g-op': subtle ? 0.3 : 0.8,
+        '--g-shift': subtle ? '1px' : '2px',
+        '--g-dur-1': subtle ? '6s' : '2.5s',
+        '--g-dur-2': subtle ? '8s' : '3s',
     };
 
-    sequence();
-  }, [animate, delay, scope, subtle]);
+    return (
+        <div className="relative inline-block" style={styleVars}>
+            <motion.span
+                ref={scope}
+                className={`relative inline-block ${className} z-10`}
+            >
+                {text}
+            </motion.span>
 
-  // CSS Variables for styling the keyframes
-  const styleVars = {
-    "--g-op": subtle ? 0.3 : 0.8,
-    "--g-shift": subtle ? "1px" : "2px",
-    "--g-dur-1": subtle ? "6s" : "2.5s",
-    "--g-dur-2": subtle ? "8s" : "3s",
-  };
+            {/* Decorative CSS Glitch Layers that appear occasionally - Only render if persistent is true */}
+            {!isGlitching && persistent && (
+                <>
+                    <span
+                        className={`absolute top-0 left-0 -z-10 w-full h-full opacity-0 ${className}`}
+                        style={{
+                            textShadow: '2px 0 #ff00ff, -2px 0 #00ffff',
+                            clipPath: 'polygon(0 0, 100% 0, 100% 45%, 0 45%)',
+                            animation:
+                                'glitch-anim-1 var(--g-dur-1) infinite linear alternate-reverse',
+                        }}
+                    >
+                        {text}
+                    </span>
+                    <span
+                        className={`absolute top-0 left-0 -z-10 w-full h-full opacity-0 ${className}`}
+                        style={{
+                            textShadow: '-2px 0 #ff00ff, 2px 0 #00ffff',
+                            clipPath:
+                                'polygon(0 60%, 100% 60%, 100% 100%, 0 100%)',
+                            animation:
+                                'glitch-anim-2 var(--g-dur-2) infinite linear alternate-reverse',
+                        }}
+                    >
+                        {text}
+                    </span>
+                </>
+            )}
 
-  return (
-    <div className="relative inline-block" style={styleVars}>
-      <motion.span 
-        ref={scope}
-        className={`relative inline-block ${className} z-10`}
-      >
-        {text}
-      </motion.span>
-      
-      {/* Decorative CSS Glitch Layers that appear occasionally - Only render if persistent is true */}
-      {!isGlitching && persistent && (
-        <>
-          <span 
-            className={`absolute top-0 left-0 -z-10 w-full h-full opacity-0 ${className}`}
-            style={{ 
-              textShadow: "2px 0 #ff00ff, -2px 0 #00ffff", 
-              clipPath: "polygon(0 0, 100% 0, 100% 45%, 0 45%)",
-              animation: "glitch-anim-1 var(--g-dur-1) infinite linear alternate-reverse"
-            }}
-          >
-            {text}
-          </span>
-          <span 
-            className={`absolute top-0 left-0 -z-10 w-full h-full opacity-0 ${className}`}
-            style={{ 
-              textShadow: "-2px 0 #ff00ff, 2px 0 #00ffff", 
-              clipPath: "polygon(0 60%, 100% 60%, 100% 100%, 0 100%)",
-              animation: "glitch-anim-2 var(--g-dur-2) infinite linear alternate-reverse"
-            }}
-          >
-            {text}
-          </span>
-        </>
-      )}
-
-      <style>{`
+            <style>{`
         @keyframes glitch-anim-1 {
           0% { opacity: 0; }
           20% { opacity: 0; }
@@ -641,30 +731,178 @@ const GlitchText = ({
           100% { opacity: 0; }
         }
       `}</style>
-    </div>
-  );
+        </div>
+    );
 };
 
-function MainPage(){
+const faqs = [
+    {
+    question: "What is TruHacks?",
+    answer: "TruHacks is an annual hackathon at Truman State University conducted by GDSC & CCE. This event promotes innovation and entrepreneurship on campus. "
+  },
+  {
+    question: "Who can participate?",
+    answer: "Anyone who is 18+ and is currently enrolled in a University/College is eligible to participate in TruHacks."
+  },
+  {
+    question: "How much does it cost?",
+    answer: "Admission is completely free! We provide meals, swag, and workspace for the entire weekend. You just need to bring your gear and enthusiasm."
+  },
+  {
+    question: "Do I need a team?",
+    answer: "You can hack solo or in teams of up to 4 players. Don't have a squad yet? Join our Discord servers to find a team. We'll also host a team formation event at the start of the hackathon."
+  },
+  {
+    question: "Can I participate virtually?",
+    answer: "While TruHacks is an in-person event, you are allowed to virtually participate if half of your team members are present in-person. "
+  },
+  {
+    question: "What should I bring?",
+    answer: "Laptop, charger, toiletries, a sleeping bag (if you plan to nap), and your student ID. We'll handle the food, internet, and energy drinks."
+  }
+];
+
+
+
+
+const FAQItem = ({ faq, isOpen, toggle, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className={`border rounded-xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-arcade-800/60 border-arcade-neon/50 shadow-[0_0_15px_rgba(255,0,255,0.1)]' : 'bg-arcade-800/20 border-white/5 hover:border-white/20'}`}
+    >
+      <button 
+        onClick={toggle}
+        className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group"
+      >
+        <span className={`font-display font-bold text-lg transition-colors ${isOpen ? 'text-white' : 'text-arcade-100/80 group-hover:text-white'}`}>
+          {faq.question}
+        </span>
+        <span className={`p-1 rounded-full border transition-all duration-300 flex items-center justify-center ${isOpen ? 'bg-arcade-neon/20 border-arcade-neon text-arcade-neon rotate-180' : 'bg-white/5 border-white/10 text-white/50 group-hover:text-white group-hover:border-white/30'}`}>
+           {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+        </span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="px-6 pb-6 text-arcade-100/70 leading-relaxed text-sm md:text-base border-t border-white/5 pt-4 font-sans">
+              {faq.answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  )
+}
+
+
+
+
+
+const ComingSoonSection = () => {
+
+     const cards = [
+    {
+      title: "Tracks",
+      icon: <Target className="text-arcade-cyan" size={32} />,
+      desc: "More than 4 different tracks with varying difficulty and topics for you to choose.",
+      delay: 0.1
+    },
+    {
+      title: "Sponsors & Partners",
+      icon: <Handshake className="text-purple-400" size={32} />,
+      desc: "Boeing and many other household companies are being contacted, with an estimated funding of over $20,000 and multiple sponsored mini-events.",
+      delay: 0.2
+    },
+    {
+      title: "Prizes",
+      icon: <Trophy className="text-yellow-400" size={32} />,
+      desc: "Over $5,000 in prizes and potential internship opportunities for winners.",
+      delay: 0.3
+    }
+  ];
+
     return(
+    <section className="py-24 px-6 relative z-10" id="coming-soon">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-arcade-neon/70 text-sm font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2">
+            <span className="w-2 h-2 bg-arcade-neon rounded-full animate-pulse"></span>
+            System Loading to Jan 2026
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-2">
+            Coming Soon
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {cards.map((card, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: card.delay, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="group relative bg-arcade-800/40 border border-white/5 rounded-2xl p-8 hover:border-arcade-neon/30 transition-all duration-300 hover:bg-arcade-800/60 hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.15)] overflow-hidden"
+            >
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-arcade-neon/50 transition-all duration-500"></div>
+              
+              <div className="flex items-start justify-between mb-6">
+                <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-white/10 transition-colors">
+                   {card.icon}
+                </div>
+                <div className="text-white/20 group-hover:text-arcade-neon transition-colors">
+                  <Lock size={20} />
+                </div>
+              </div>
+
+              <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-arcade-100 transition-colors">
+                {card.title}
+              </h3>
+              
+              <p className="text-arcade-100/60 text-sm leading-relaxed font-sans">
+                {card.desc}
+              </p>
+
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+    )
+}
+
+function MainPage() {
+    const [openIndex, setOpenIndex] = useState(null);
+    return (
         <>
-        <Navbar/>
-        <section className="relative h-[84vh]">
-      <ParallaxBanner className="aspect-auto h-full w-full">
-        <ParallaxBannerLayer 
-            image="bg-dark.png" 
-            speed={-5} 
-            scale={[1, 1.1]}
-            /* className="brightness-[0.4] blur-[1px]"  */
-        />
+            <Navbar />
+            <section className="relative h-[84vh]">
+                <ParallaxBanner className="aspect-auto h-full w-full">
+                    <ParallaxBannerLayer
+                        image="bg-dark.png"
+                        speed={-5}
+                        scale={[1, 1.1]}
+                        /* className="brightness-[0.4] blur-[1px]"  */
+                    />
 
-        <ParallaxBannerLayer 
-            image="midg-dark.png" 
-            speed={-10} 
-            /* className="brightness-[0.6] drop-shadow-2xl" */
-        />
+                    <ParallaxBannerLayer
+                        image="midg-dark.png"
+                        speed={-10}
+                        /* className="brightness-[0.6] drop-shadow-2xl" */
+                    />
 
-        {/* <ParallaxBannerLayer 
+                    {/* <ParallaxBannerLayer 
             image="newMain-1.png" 
             speed={-30} 
             scale={[1, 1.3]}
@@ -672,106 +910,167 @@ function MainPage(){
             className="z-10"
         /> */}
 
-        <ParallaxBannerLayer
-            image="dust-1.png"
-            speed={60}
-            opacity={[1, 0.1]}
-        />
-
-
-        <ParallaxBannerLayer 
-            speed={-9} 
-            scale={[0.8, 1.2]} 
-            translateY={[-50, 30]}
-            className="z-20 flex items-center justify-center pointer-events-none"
-        >
-          <div className="text-center px-4 max-w-5xl pt-[20vh] md:pt-[5vh] pointer-events-auto">
-            <motion.div 
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: -50 }} // Slightly reduced Y movement to keep it centered
-              transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
-            >
-              
-              {/* Title Container */}
-              <div className="relative mb-6">
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tighter text-white drop-shadow-[0_0_30px_rgba(139,92,246,0.5)]">
-                    {/* The Glitch Text Component */}
-                    <GlitchText text="TRU" delay={0.8} />
-                    <GlitchText 
-                      text="HACKS" 
-                      delay={1.2} 
-                      subtle={true} 
-                      persistent={false}
-                      className="text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-400 to-indigo-500 pr-1" 
+                    <ParallaxBannerLayer
+                        image="dust-1.png"
+                        speed={60}
+                        opacity={[1, 0.1]}
                     />
-                </h1>
-                
-                {/* Decorative lines under title */}
-                <motion.div 
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ delay: 2, duration: 0.8 }}
-                    className="h-1 w-2/3 mx-auto bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-2"
-                />
-              </div>
 
-              {/* Badges/Info Pills */}
-              <motion.div 
-                className="flex flex-col md:flex-row gap-6 justify-center items-center mb-10 text-sm md:text-base font-medium"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.2, duration: 1 }}
-              >
-                <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
-                    <Calendar className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
-                    <span className="tracking-wide">FEBRUARY 2026</span>
-                </div>
-                
-                <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
-                    <MapPin className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
-                    <span className="tracking-wide">KIRKSVILLE, MO</span>
-                </div>
+                    <ParallaxBannerLayer
+                        speed={-9}
+                        scale={[0.8, 1.2]}
+                        translateY={[-50, 30]}
+                        className="z-20 flex items-center justify-center pointer-events-none"
+                    >
+                        <div className="text-center px-4 max-w-5xl pt-[20vh] md:pt-[5vh] pointer-events-auto">
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: -50 }} // Slightly reduced Y movement to keep it centered
+                                transition={{
+                                    duration: 1.2,
+                                    ease: 'easeOut',
+                                    delay: 0.5,
+                                }}
+                            >
+                                {/* Title Container */}
+                                <div className="relative mb-6">
+                                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tighter text-white drop-shadow-[0_0_30px_rgba(139,92,246,0.5)]">
+                                        {/* The Glitch Text Component */}
+                                        <GlitchText text="TRU" delay={0.8} />
+                                        <GlitchText
+                                            text="HACKS"
+                                            delay={1.2}
+                                            subtle={true}
+                                            persistent={false}
+                                            className="text-transparent bg-clip-text bg-gradient-to-b from-purple-300 via-purple-400 to-indigo-500 pr-1"
+                                        />
+                                    </h1>
 
-                <div className="group flex items-center gap-3 bg-purple-900/40 px-6 py-3 rounded-full backdrop-blur-md border border-purple-500/30 shadow-[0_0_20px_rgba(124,58,237,0.2)] hover:bg-purple-900/60 transition-colors cursor-pointer">
-                    <Terminal className="w-4 h-4 text-purple-300" />
-                    <span className="tracking-wide font-bold text-purple-100">REGISTER NOW</span>
-                </div>
-              </motion.div>
+                                    {/* Decorative lines under title */}
+                                    <motion.div
+                                        initial={{ scaleX: 0 }}
+                                        animate={{ scaleX: 1 }}
+                                        transition={{ delay: 2, duration: 0.8 }}
+                                        className="h-1 w-2/3 mx-auto bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-2"
+                                    />
+                                </div>
 
-            </motion.div>
-          </div>
-        </ParallaxBannerLayer>
+                                {/* Badges/Info Pills */}
+                                <motion.div
+                                    className="flex flex-col md:flex-row gap-6 justify-center items-center mb-10 text-sm md:text-base font-medium"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 2.2, duration: 1 }}
+                                >
+                                    <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
+                                        <Calendar className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
+                                        <span className="tracking-wide">
+                                            COMING SPRING 2026
+                                        </span>
+                                    </div>
 
-        
-        {/* Soft Transition Gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent z-30" />
-      </ParallaxBanner>
-    </section>
+                                    <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
+                                        <MapPin className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
+                                        <span className="tracking-wide">
+                                            KIRKSVILLE, MO
+                                        </span>
+                                    </div>
 
-    <div className="min-h-screen w-full relative">
-    <div
-      className="fixed inset-0 -z-10 opacity-50"
-      style={{
-        backgroundImage: `
+                                    <div
+                                        onClick={() => {
+                                            const element =
+                                                document.getElementById(
+                                                    'sign-up'
+                                                );
+                                            if (element) {
+                                                element.scrollIntoView({
+                                                    behavior: 'smooth',
+                                                    block: 'start',
+                                                });
+                                            }
+                                        }}
+                                        className="group flex items-center gap-3 bg-purple-900/40 px-6 py-3 rounded-full backdrop-blur-md border border-purple-500/30 shadow-[0_0_20px_rgba(124,58,237,0.2)] hover:bg-purple-900/60 transition-colors cursor-pointer"
+                                    >
+                                        <Terminal className="w-4 h-4 text-purple-300" />
+                                        <span className="tracking-wide font-bold text-purple-100">
+                                            REGISTER NOW
+                                        </span>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+                        </div>
+                    </ParallaxBannerLayer>
+
+                    {/* Soft Transition Gradient at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent z-30" />
+                </ParallaxBanner>
+            </section>
+
+            <div className="min-h-screen w-full relative">
+                <div
+                    className="fixed inset-0 -z-10 opacity-50"
+                    style={{
+                        backgroundImage: `
           linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
           linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
         `,
-        backgroundSize: "60px 60px",
-      }}
-    />
+                        backgroundSize: '60px 60px',
+                    }}
+                />
 
-
-  <AboutSection />
-    <TracksSection />
+                <AboutSection />
+                {/*     <TracksSection />
     <PrizesSection />
-    <SponsorsSection />
-    <SignUpSection />
-    <TeamSection />
-</div>
+    <SponsorsSection /> */}
+                <ComingSoonSection/>
+                <SignUpSection />
+                <section className="py-24 px-6 relative z-10" id="faqs">
+                <div className="max-w-3xl mx-auto">
+                    <div className="text-center mb-16">
+                        <span className="text-arcade-neon text-sm font-bold tracking-[0.2em] uppercase">Tutorial Mode</span>
+                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-2">FAQ</h2>
+                    </div>
 
-    
+                    <div className="space-y-4">
+                        {faqs.map((faq, idx) => (
+                        <FAQItem 
+                            key={idx} 
+                            faq={faq} 
+                            isOpen={openIndex === idx} 
+                            toggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+                            index={idx}
+                        />
+                        ))}
+                    </div>
+                </div>
+                </section>
+{/*                 <TeamSection /> */}
+            </div>
+
+            <footer className="bg-arcade-950 py-8 border-t border-white/15 relative z-20 bg-gray-800/50">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className='flex flex-col gap-1'>
+          <h4 className="font-display text-2xl font-bold text-white">© TruHacks 2026</h4>
+          <p>Truman State University</p>
+        </div>
+        <div className="flex gap-6">
+          <a href="https://discord.gg/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faInstagram} /> Instagram</a>
+          <a href="https://www.instagram.com/gdsc_tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faDiscord} /> Discord</a>
+          <a href="https://www.linkedin.com/company/google-developers-student-club-tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faLinkedin} /> Linkedin</a>
+          <a href="https://www.instagram.com/ccetruman/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faLightbulb} /> CCE</a>
+
+        </div>
+        <div className="flex gap-3">
+            <a href="https://sites.google.com/truman.edu/truhacks/home" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Code of Conduct</a>
+            <p className="text-arcade-100/60">•</p>
+            <a href="https://www.truman.edu/policies/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Truman State Policies</a>
+            <p className="text-arcade-100/60">•</p>
+            <a href="https://titleix.truman.edu/statement-on-nondiscrimination/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Title IX</a>
+        </div>
+      </div>
+    </footer>
         </>
-    )
+    );
 }
 
 export default MainPage
