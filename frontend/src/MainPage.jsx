@@ -439,7 +439,7 @@ const SignUpSection = () => {
                 transition-transform duration-300
                 group-hover:scale-105"></div>
                 <div className="relative bg-arcade-800 border border-white/10 rounded-2xl p-6 sm:p-8 md:p-12 text-center overflow-hidden
-                hover:scale-105 duration-300">
+                group-hover:scale-105 duration-300">
                     {/* Background Scanlines */}
 
                     <div className="relative z-10">
@@ -459,15 +459,15 @@ const SignUpSection = () => {
                                 />
                                 TruHacks Discord
                             </button>
-                            <button onClick={() => window.open('https://devpost.com/truhacks', '_blank')} 
-                            className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+                            <button /* onClick={() => window.open('https://devpost.com/truhacks', '_blank')}  */
+                            className="cursor-not-allowed bg-gray-500 border-2 border-white/5 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
                                 <FontAwesomeIcon
                                     icon={faDev}
                                     className="w-5 h-5"
                                 />
-                                Devpost
+                                Devpost (TBA)
                             </button>
-                            <button className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+                            <button onClick={() => window.open('https://discord.gg/9zdmwyUxM4', '_blank')} className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
                                 <FontAwesomeIcon
                                     icon={faCode}
                                     className="w-5 h-5"
@@ -480,7 +480,7 @@ const SignUpSection = () => {
                             className="max-w-md mx-auto flex items-center justify-center"
                             onSubmit={(e) => e.preventDefault()}
                         >
-                            <button className="cursor-pointer bg-arcade-neon hover:bg-arcade-500 text-white font-bold px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg flex items-center justify-center gap-2 transition-all group active:scale-95 w-full sm:w-auto text-sm sm:text-base">
+                            <button onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSemeYIpHY_fUWPWb21G8Ac3611RhkZH4HvW2LwLoyPVZhdXDw/viewform?usp=header', '_blank')} className="cursor-pointer bg-arcade-neon hover:bg-arcade-500 text-white font-bold px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg flex items-center justify-center gap-2 transition-all group active:scale-95 w-full sm:w-auto text-sm sm:text-base">
                                 <span className="whitespace-nowrap overflow-hidden text-ellipsis">
                                     FILL OUT OUR FORM AND RESERVE A SPOT
                                 </span>
@@ -776,7 +776,7 @@ const FAQItem = ({ faq, isOpen, toggle, index }) => {
     >
       <button 
         onClick={toggle}
-        className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group"
+        className="cursor-pointer w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group"
       >
         <span className={`font-display font-bold text-lg transition-colors ${isOpen ? 'text-white' : 'text-arcade-100/80 group-hover:text-white'}`}>
           {faq.question}
@@ -1054,8 +1054,8 @@ function MainPage() {
           <p>Truman State University</p>
         </div>
         <div className="flex gap-6">
-          <a href="https://discord.gg/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faInstagram} /> Instagram</a>
-          <a href="https://www.instagram.com/gdsc_tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faDiscord} /> Discord</a>
+          <a href="https://www.instagram.com/gdsc_tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faInstagram} /> Instagram</a>
+          <a href="https://discord.gg/9zdmwyUxM4" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faDiscord} /> Discord</a>
           <a href="https://www.linkedin.com/company/google-developers-student-club-tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faLinkedin} /> Linkedin</a>
           <a href="https://www.instagram.com/ccetruman/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faLightbulb} /> CCE</a>
 
