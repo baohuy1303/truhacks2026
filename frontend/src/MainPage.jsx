@@ -450,52 +450,67 @@ const SignUpSection = () => {
                             Registration is open for all university students.
                             Secure your spot now!
                         </p>
-                        <div className="flex flex-col md:flex-row gap-4 mb-5 items-center justify-center">
-                            <button onClick={() => window.open('https://discord.gg/xyZvHBAKT', '_blank')} 
-                            className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all ">
-                                <FontAwesomeIcon
-                                    icon={faDiscord}
-                                    className="w-5 h-5"
-                                />
-                                TruHacks Discord
-                            </button>
-                            <button /* onClick={() => window.open('https://devpost.com/truhacks', '_blank')}  */
-                            className="cursor-not-allowed bg-gray-500 border-2 border-white/5 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
-                                <FontAwesomeIcon
-                                    icon={faDev}
-                                    className="w-5 h-5"
-                                />
-                                Devpost (TBA)
-                            </button>
-                            <button onClick={() => window.open('https://discord.gg/9zdmwyUxM4', '_blank')} className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
-                                <FontAwesomeIcon
-                                    icon={faCode}
-                                    className="w-5 h-5"
-                                />
-                                GDSC Discord
-                            </button>
+                        <div className="flex flex-row flex-wrap gap-4 mb-5 items-center justify-center">
+                            <button 
+    onClick={() => window.open('https://discord.gg/xyZvHBAKT', '_blank')} 
+    className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all text-sm sm:text-base md:text-base"
+>
+    <FontAwesomeIcon
+        icon={faDiscord}
+        className="w-4 h-4 sm:w-5 sm:h-5"
+    />
+    TruHacks Discord
+</button>
+<button 
+    /* onClick={() => window.open('https://devpost.com/truhacks', '_blank')} */
+    className="cursor-not-allowed bg-gray-500 border-2 border-white/5 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all text-sm sm:text-base md:text-base"
+>
+    <FontAwesomeIcon
+        icon={faDev}
+        className="w-4 h-4 sm:w-5 sm:h-5"
+    />
+    Devpost (TBA)
+</button>
+<button 
+    onClick={() => window.open('https://discord.gg/9zdmwyUxM4', '_blank')} 
+    className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all text-sm sm:text-base md:text-base"
+>
+    <FontAwesomeIcon
+        icon={faCode}
+        className="w-4 h-4 sm:w-5 sm:h-5"
+    />
+    GDSC Discord
+</button>
                         </div>
-
                         <form
-                            className="max-w-md mx-auto flex items-center justify-center"
+                            className="w-full max-w-md mx-auto flex items-center justify-center"
                             onSubmit={(e) => e.preventDefault()}
                         >
-                            <button onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSemeYIpHY_fUWPWb21G8Ac3611RhkZH4HvW2LwLoyPVZhdXDw/viewform?usp=header', '_blank')} className="cursor-pointer bg-arcade-neon hover:bg-arcade-500 text-white font-bold px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg flex items-center justify-center gap-2 transition-all group active:scale-95 w-full sm:w-auto text-sm sm:text-base">
-                                <span className="whitespace-nowrap overflow-hidden text-ellipsis">
-                                    FILL OUT OUR FORM AND RESERVE A SPOT
+                            <button 
+                                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSemeYIpHY_fUWPWb21G8Ac3611RhkZH4HvW2LwLoyPVZhdXDw/viewform?usp=header', '_blank')} 
+                                className="cursor-pointer bg-arcade-neon hover:bg-arcade-500 text-white font-bold px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg flex items-center justify-center gap-2 transition-all group active:scale-95 w-full sm:w-auto text-md sm:text-base md:text-lg lg:text-xl"
+                            >
+                                <span className="whitespace-nowrap overflow-hidden text-ellipsis text-center">
+                                    FILL OUT OUR FORM NOW
                                 </span>
                                 <ArrowRight
-                                    size={18}
+                                    size={16}
                                     className="flex-shrink-0 group-hover:translate-x-1 transition-transform"
                                 />
                             </button>
                         </form>
-                        <div className="flex gap-3 items-center justify-center mt-4">
-                            <a href="https://sites.google.com/truman.edu/truhacks/home" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Code of Conduct</a>
-                            <p className="text-arcade-100/60">•</p>
-                            <a href="https://www.truman.edu/policies/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Truman State Policies</a>
-                            <p className="text-arcade-100/60">•</p>
-                            <a href="https://titleix.truman.edu/statement-on-nondiscrimination/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Title IX</a>
+                        <div className="flex flex-wrap gap-x-3 gap-y-1 items-center justify-center mt-4 px-2">
+                            <a href="https://sites.google.com/truman.edu/truhacks/home" target="_blank" rel="noopener noreferrer" className="text-arcade-100/60 hover:text-arcade-neon transition-colors text-xs sm:text-sm whitespace-nowrap">
+                                Code of Conduct
+                            </a>
+                            <span className="text-arcade-100/30">•</span>
+                            <a href="https://www.truman.edu/policies/" target="_blank" rel="noopener noreferrer" className="text-arcade-100/60 hover:text-arcade-neon transition-colors text-xs sm:text-sm whitespace-nowrap">
+                                Truman State Policies
+                            </a>
+                            <span className="text-arcade-100/30">•</span>
+                            <a href="https://titleix.truman.edu/statement-on-nondiscrimination/" target="_blank" rel="noopener noreferrer" className="text-arcade-100/60 hover:text-arcade-neon transition-colors text-xs sm:text-sm whitespace-nowrap">
+                                Title IX
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -738,7 +753,7 @@ const GlitchText = ({
 const faqs = [
     {
     question: "What is TruHacks?",
-    answer: "TruHacks is an annual hackathon at Truman State University conducted by GDSC & CCE. This event promotes innovation and entrepreneurship on campus. "
+    answer: "TruHacks is an annual 36-hour hackathon at Truman State University conducted by GDSC & CCE. This event promotes innovation and entrepreneurship on campus. "
   },
   {
     question: "Who can participate?",
@@ -814,7 +829,7 @@ const ComingSoonSection = () => {
     {
       title: "Tracks",
       icon: <Target className="text-arcade-cyan" size={32} />,
-      desc: "More than 4 different tracks with varying difficulty and topics for you to choose.",
+      desc: "More than 4 different tracks with varying difficulty and topics for you to choose, including Beginner, Business, Advanced, etc...",
       delay: 0.1
     },
     {
@@ -889,15 +904,10 @@ function MainPage() {
             <Navbar />
             <section className="relative h-[84vh]">
                 <ParallaxBanner className="aspect-auto h-full w-full">
-                    <ParallaxBannerLayer
-                        image="bg-dark.png"
-                        speed={-5}
-                        scale={[1, 1.1]}
-                        /* className="brightness-[0.4] blur-[1px]"  */
-                    />
+
 
                     <ParallaxBannerLayer
-                        image="midg-dark.png"
+                        image="midg-dark_webp.webp"
                         speed={-10}
                         /* className="brightness-[0.6] drop-shadow-2xl" */
                     />
@@ -1022,53 +1032,140 @@ function MainPage() {
                 {/*     <TracksSection />
     <PrizesSection />
     <SponsorsSection /> */}
-                <ComingSoonSection/>
+                <ComingSoonSection />
                 <SignUpSection />
                 <section className="py-24 px-6 relative z-10" id="faqs">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-16">
-                        <span className="text-arcade-neon text-sm font-bold tracking-[0.2em] uppercase">Tutorial Mode</span>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-2">FAQ</h2>
-                    </div>
+                    <div className="max-w-3xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="text-arcade-neon text-sm font-bold tracking-[0.2em] uppercase">
+                                Tutorial Mode
+                            </span>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-2">
+                                FAQ
+                            </h2>
+                        </div>
 
-                    <div className="space-y-4">
-                        {faqs.map((faq, idx) => (
-                        <FAQItem 
-                            key={idx} 
-                            faq={faq} 
-                            isOpen={openIndex === idx} 
-                            toggle={() => setOpenIndex(openIndex === idx ? null : idx)}
-                            index={idx}
-                        />
-                        ))}
+                        <div className="space-y-4">
+                            {faqs.map((faq, idx) => (
+                                <FAQItem
+                                    key={idx}
+                                    faq={faq}
+                                    isOpen={openIndex === idx}
+                                    toggle={() =>
+                                        setOpenIndex(
+                                            openIndex === idx ? null : idx
+                                        )
+                                    }
+                                    index={idx}
+                                />
+                            ))}
+                        </div>
                     </div>
-                </div>
                 </section>
-{/*                 <TeamSection /> */}
+                {/*                 <TeamSection /> */}
             </div>
 
             <footer className="bg-arcade-950 py-8 border-t border-white/15 relative z-20 bg-gray-800/50">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className='flex flex-col gap-1'>
-          <h4 className="font-display text-2xl font-bold text-white">© TruHacks 2026</h4>
-          <p>Truman State University</p>
-        </div>
-        <div className="flex gap-6">
-          <a href="https://www.instagram.com/gdsc_tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faInstagram} /> Instagram</a>
-          <a href="https://discord.gg/9zdmwyUxM4" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faDiscord} /> Discord</a>
-          <a href="https://www.linkedin.com/company/google-developers-student-club-tsu/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faLinkedin} /> Linkedin</a>
-          <a href="https://www.instagram.com/ccetruman/" target='_blank' className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1"> <FontAwesomeIcon icon={faLightbulb} /> CCE</a>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row justify-between items-center">
+                        <div className="flex flex-col gap-1 text-center md:text-left">
+                            <h4 className="font-display text-2xl font-bold text-white">
+                                {' '}
+                                TruHacks 2026
+                            </h4>
+                            <p className="text-arcade-100/80">
+                                Truman State University
+                            </p>
+                        </div>
 
-        </div>
-        <div className="flex gap-3">
-            <a href="https://sites.google.com/truman.edu/truhacks/home" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Code of Conduct</a>
-            <p className="text-arcade-100/60">•</p>
-            <a href="https://www.truman.edu/policies/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Truman State Policies</a>
-            <p className="text-arcade-100/60">•</p>
-            <a href="https://titleix.truman.edu/statement-on-nondiscrimination/" target="_blank" className="text-arcade-100/60 hover:text-arcade-neon transition-colors">Title IX</a>
-        </div>
-      </div>
-    </footer>
+                        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+                            <a
+                                href="https://www.instagram.com/gdsc_tsu/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faInstagram}
+                                    className="w-4 h-4"
+                                />{' '}
+                                Instagram
+                            </a>
+                            <a
+                                href="https://discord.gg/9zdmwyUxM4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faDiscord}
+                                    className="w-4 h-4"
+                                />{' '}
+                                Discord
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/google-developers-student-club-tsu/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faLinkedin}
+                                    className="w-4 h-4"
+                                />{' '}
+                                LinkedIn
+                            </a>
+                            <a
+                                href="https://www.instagram.com/ccetruman/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faLightbulb}
+                                    className="w-4 h-4"
+                                />{' '}
+                                CCE
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-white/10">
+                        <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm">
+                            <a
+                                href="https://sites.google.com/truman.edu/truhacks/home"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors whitespace-nowrap"
+                            >
+                                Code of Conduct
+                            </a>
+                            <span className="text-arcade-100/30 hidden sm:inline">
+                                •
+                            </span>
+                            <a
+                                href="https://www.truman.edu/policies/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors whitespace-nowrap"
+                            >
+                                Truman State Policies
+                            </a>
+                            <span className="text-arcade-100/30 hidden sm:inline">
+                                •
+                            </span>
+                            <a
+                                href="https://titleix.truman.edu/statement-on-nondiscrimination/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors whitespace-nowrap"
+                            >
+                                Title IX
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </>
     );
 }
