@@ -1,0 +1,15 @@
+[Unit]
+Description=React.js Truhacks Project
+After=network.target
+
+[Service]
+Type=simple
+User=lu15568
+Group=student
+WorkingDirectory=/home/ldap/lu15568/TruHacks2026/frontend
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
