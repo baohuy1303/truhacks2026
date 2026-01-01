@@ -907,7 +907,7 @@ function MainPage() {
 
 
                     <ParallaxBannerLayer
-                        image="midg-dark_webp.webp"
+                        image="midg-dark_webp_test1.webp"
                         speed={-10}
                         /* className="brightness-[0.6] drop-shadow-2xl" */
                     />

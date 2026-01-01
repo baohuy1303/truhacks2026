@@ -52,7 +52,7 @@ export const Navbar = () => {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex gap-8 lg:gap-12 items-center">
+                <div className="hidden md:flex gap-5 lg:gap-12 items-center">
                     <NavLink
                         text="About"
                         onClick={() => scrollToSection('about')}
