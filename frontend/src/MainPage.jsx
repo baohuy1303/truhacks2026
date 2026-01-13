@@ -165,21 +165,21 @@ const Feature = ({ icon, title, desc }) => (
 const tracks = [
     {
         title: 'Developer',
-        desc: 'Tech for a healthier tomorrow. Apps for fitness, mental health, and accessibility.',
+        desc: 'Build your project from scratch over 36 hours. Bring your ideas to life with code, collaborate with teammates, and compete for technical awards.',
         icon: <Code size={32} className="text-red-400" />,
         color: 'border-red-500/30 hover:border-red-500',
         bg: 'from-red-900/20 to-transparent',
     },
     {
         title: 'Business',
-        desc: 'Code for the planet. Solutions for climate change, energy, and eco-living.',
+        desc: 'No coding required. Craft a killer business pitch and present it to judges in partnership with CCE. Show off your strategy, creativity, and persuasion skills.',
         icon: <Globe size={32} className="text-green-400" />,
         color: 'border-green-500/30 hover:border-green-500',
         bg: 'from-green-900/20 to-transparent',
     },
     {
         title: 'Beginner',
-        desc: 'Press Start. Build immersive games, AR/VR experiences, or interactive art.',
+        desc: 'Never coded before? No problem. Get paired with a mentor who will guide you step-by-step. Learn the ropes, build your first project, and experience the thrill of hackathon hacking.',
         icon: <Gamepad2 size={32} className="text-purple-400" />,
         color: 'border-purple-500/30 hover:border-purple-500',
         bg: 'from-purple-900/20 to-transparent',
@@ -253,7 +253,7 @@ const PrizesSection = () => {
                     <PrizeCard
                         title="Second Place"
                         prize="$2,000"
-                        items={['Gaming Headsets', 'Dev Licenses', 'Swag Kits']}
+                        items={[{icon: <Code className='scale-80 text-red-400'/>, text: 'Developer - $800'}, {icon: <Globe className='scale-80 text-green-400'/>, text: 'Business - $500'}, {icon: <Gamepad2 className='scale-80 text-purple-400'/>, text: 'Beginner - $500'}]}
                         color="border-gray-400"
                         delay={0.2}
                     />
@@ -278,15 +278,28 @@ const PrizesSection = () => {
                             $5,000
                         </div>
                         <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-arcade-100/80 mb-6 sm:mb-8">
-                            <li className="border-b border-white/10 pb-2">
-                                Latest Gen Consoles
+                            <li className="flex items-center px-10 md:px-0 lg:px-5 xl:px-10 border-b border-white/10 pb-2">
+                            <Code className='scale-80 text-red-400 mr-2' />
+                            <div className='text-center mx-auto text-lg'>
+                                Developer - $1,200
+                            </div>
                             </li>
-                            <li className="border-b border-white/10 pb-2">
-                                Mechanical Keyboards
+
+                            <li className="flex items-center px-10 md:px-0 lg:px-5 xl:px-10 border-b border-white/10 pb-2">
+                            <Globe className='scale-80 text-green-400 mr-2' />
+                            <div className='text-center mx-auto text-lg'>
+                                Business - $800
+                            </div>
                             </li>
-                            <li className="border-b border-white/10 pb-2">
-                                Internship Interview
+
+                            <li className="flex items-center px-10 md:px-0 lg:px-5 xl:px-10 border-b border-white/10 pb-2">
+                            <Gamepad2 className='scale-80 text-purple-400 mr-2' />
+                            <div className='text-center mx-auto text-lg'>
+                                Beginner - $800
+                            </div>
                             </li>
+
+
                         </ul>
                     </motion.div>
 
@@ -294,7 +307,11 @@ const PrizesSection = () => {
                     <PrizeCard
                         title="Third Place"
                         prize="$1,000"
-                        items={['Arduino Kits', 'Cloud Credits', 'T-Shirts']}
+                        items={[
+                            { icon: <Code className='scale-80 text-red-400'/>, text: 'Developer - $600' },
+                            { icon: <Globe className='scale-80 text-green-400'/>, text: 'Business - $300' },
+                            { icon: <Gamepad2 className='scale-80 text-purple-400'/>, text: 'Beginner - $300' }
+                            ]}
                         color="border-orange-700"
                         delay={0.4}
                     />
@@ -304,7 +321,7 @@ const PrizesSection = () => {
     );
 };
 
-const PrizeCard = ({ place, title, prize, items, color, delay }) => (
+const PrizeCard = ({ title, prize, items, color, delay }) => (
     <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -318,10 +335,13 @@ const PrizeCard = ({ place, title, prize, items, color, delay }) => (
         <div className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
             {prize}
         </div>
-        <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-arcade-100/60">
+        <ul className="space-y-1 sm:space-y-2 text-xs sm:text-xs lg:text-sm text-arcade-100/60">
             {items.map((item, i) => (
-                <li key={i} className="px-2">
-                    {item}
+                <li key={i} className="flex items-center px-10 md:px-0 lg:px-5 xl:px-10">
+                    {item.icon}
+                    <div className='text-center mx-auto' >
+                        {item.text}
+                    </div>
                 </li>
             ))}
         </ul>
@@ -456,14 +476,14 @@ const SignUpSection = () => {
     TruHacks Discord
 </button>
 <button 
-    /* onClick={() => window.open('https://devpost.com/truhacks', '_blank')} */
-    className="cursor-not-allowed bg-gray-500 border-2 border-white/5 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all text-sm sm:text-base md:text-base"
+    onClick={() => window.open('https://boeing-presents-truhacks-2026.devpost.com/?preview_token=7SOra2squAGnZM9exmyvydZ5m6ncHGS7fElzRj5GOA8%3D', '_blank')}
+    className="cursor-pointer bg-arcade-500 border-2 border-white/5 hover:border-arcade-300 text-white font-bold px-2 sm:px-4 md:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center gap-2 transition-all text-sm sm:text-base md:text-base"
 >
     <FontAwesomeIcon
         icon={faDev}
         className="w-4 h-4 sm:w-5 sm:h-5"
     />
-    Devpost (TBA)
+    Devpost
 </button>
 <button 
     onClick={() => window.open('https://discord.gg/9zdmwyUxM4', '_blank')} 
@@ -1058,7 +1078,7 @@ function MainPage() {
                         </div>
                     </div>
                 </section>
-                {/*                 <TeamSection /> */}
+                                <TeamSection />
             </div>
 
             <footer className="bg-arcade-950 py-8 border-t border-white/15 relative z-20 bg-gray-800/50">
