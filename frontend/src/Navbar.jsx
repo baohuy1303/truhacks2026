@@ -46,9 +46,9 @@ export const Navbar = () => {
             >
                 <div
                     onClick={scrollToTop}
-                    className="font-display font-bold text-lg sm:text-xl text-white tracking-wider cursor-pointer"
+                    className="font-display font-bold text-md md:text-sm lg:text-lg text-white tracking-wider cursor-pointer"
                 >
-                    TRU<span className="text-arcade-neon">HACKS</span>
+                    <span className='text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-blue-400'>BOEING</span> <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white'> x </span>TRU<span className="text-arcade-neon">HACKS</span>
                 </div>
 
                 {/* Desktop Navigation */}

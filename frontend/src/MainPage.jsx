@@ -20,7 +20,8 @@ import {
     Trophy,
     Handshake,
     Target,
-    Lock
+    Lock,
+    Code
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import React from 'react';
@@ -163,32 +164,25 @@ const Feature = ({ icon, title, desc }) => (
 
 const tracks = [
     {
-        title: 'Health & Wellness',
+        title: 'Developer',
         desc: 'Tech for a healthier tomorrow. Apps for fitness, mental health, and accessibility.',
-        icon: <HeartPulse size={32} className="text-red-400" />,
+        icon: <Code size={32} className="text-red-400" />,
         color: 'border-red-500/30 hover:border-red-500',
         bg: 'from-red-900/20 to-transparent',
     },
     {
-        title: 'Sustainability',
+        title: 'Business',
         desc: 'Code for the planet. Solutions for climate change, energy, and eco-living.',
         icon: <Globe size={32} className="text-green-400" />,
         color: 'border-green-500/30 hover:border-green-500',
         bg: 'from-green-900/20 to-transparent',
     },
     {
-        title: 'Game Dev',
+        title: 'Beginner',
         desc: 'Press Start. Build immersive games, AR/VR experiences, or interactive art.',
         icon: <Gamepad2 size={32} className="text-purple-400" />,
         color: 'border-purple-500/30 hover:border-purple-500',
         bg: 'from-purple-900/20 to-transparent',
-    },
-    {
-        title: 'Education',
-        desc: 'Softwares that teaches people valuable knowledge.',
-        icon: <Lightbulb size={32} className="text-yellow-400" />,
-        color: 'border-yellow-500/30 hover:border-yellow-500',
-        bg: 'from-yellow-900/20 to-transparent',
     },
 ];
 
@@ -205,7 +199,7 @@ const TracksSection = () => {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6">
                     {tracks.map((track, idx) => (
                         <motion.div
                             key={idx}
@@ -944,8 +938,10 @@ function MainPage() {
                             >
                                 {/* Title Container */}
                                 <div className="relative mb-6">
-                                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tighter text-white drop-shadow-[0_0_30px_rgba(139,92,246,0.5)]">
+                                    <h1 className="text-4xl md:text-7xl lg:text-[5.3rem] font-display font-black tracking-tighter text-white drop-shadow-[0_0_30px_rgba(139,92,246,0.5)]">
                                         {/* The Glitch Text Component */}
+                                        <GlitchText text="BOEING" delay={0.4} className='text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-blue-800 pr-1'/>{' '}
+                                        <GlitchText text="x" delay={0.6} className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white'/> {' '}
                                         <GlitchText text="TRU" delay={0.8} />
                                         <GlitchText
                                             text="HACKS"
@@ -975,7 +971,7 @@ function MainPage() {
                                     <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
                                         <Calendar className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
                                         <span className="tracking-wide">
-                                            COMING SPRING 2026
+                                            FEB 13-15 2026
                                         </span>
                                     </div>
 
@@ -1029,10 +1025,10 @@ function MainPage() {
                 />
 
                 <AboutSection />
-                {/*     <TracksSection />
-    <PrizesSection />
-    <SponsorsSection /> */}
-                <ComingSoonSection />
+                <TracksSection />
+                <PrizesSection />
+                <SponsorsSection />
+                {/* <ComingSoonSection /> */}
                 <SignUpSection />
                 <section className="py-24 px-6 relative z-10" id="faqs">
                     <div className="max-w-3xl mx-auto">
