@@ -252,7 +252,7 @@ const PrizesSection = () => {
                     {/* 2nd Place */}
                     <PrizeCard
                         title="Second Place"
-                        prize="$2,000"
+                        prize="$1,800+"
                         items={[{icon: <Code className='scale-80 text-red-400'/>, text: 'Developer - $800'}, {icon: <Globe className='scale-80 text-green-400'/>, text: 'Business - $500'}, {icon: <Gamepad2 className='scale-80 text-purple-400'/>, text: 'Beginner - $500'}]}
                         color="border-gray-400"
                         delay={0.2}
@@ -275,7 +275,7 @@ const PrizesSection = () => {
                             First Place
                         </h3>
                         <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-arcade-neon to-white mb-4 sm:mb-6">
-                            $5,000
+                            $2,800+
                         </div>
                         <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-arcade-100/80 mb-6 sm:mb-8">
                             <li className="flex items-center px-10 md:px-0 lg:px-5 xl:px-10 border-b border-white/10 pb-2">
@@ -306,7 +306,7 @@ const PrizesSection = () => {
                     {/* 3rd Place */}
                     <PrizeCard
                         title="Third Place"
-                        prize="$1,000"
+                        prize="$1,200+"
                         items={[
                             { icon: <Code className='scale-80 text-red-400'/>, text: 'Developer - $600' },
                             { icon: <Globe className='scale-80 text-green-400'/>, text: 'Business - $300' },
@@ -397,8 +397,8 @@ const SponsorsSection = () => {
                     </h3>
                     <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 items-center">
                         <SponsorImage
-                            src="https://placehold.co/400x150/2d1b4e/ffffff?text=GDSC"
-                            alt="GDSC"
+                            src="https://placehold.co/400x150/2d1b4e/ffffff?text=GDG"
+                            alt="GDG"
                             size="small"
                         />
                         <SponsorImage
@@ -493,7 +493,7 @@ const SignUpSection = () => {
         icon={faCode}
         className="w-4 h-4 sm:w-5 sm:h-5"
     />
-    GDSC Discord
+    GDG Discord
 </button>
                         </div>
                         <form
@@ -767,7 +767,7 @@ const GlitchText = ({
 const faqs = [
     {
     question: "What is TruHacks?",
-    answer: "TruHacks is an annual 36-hour hackathon at Truman State University conducted by GDSC & CCE. This event promotes innovation and entrepreneurship on campus. "
+    answer: "TruHacks is an annual 36-hour hackathon at Truman State University conducted by GDG & CCE. This event promotes innovation and entrepreneurship on campus. "
   },
   {
     question: "Who can participate?",
@@ -911,6 +911,69 @@ const ComingSoonSection = () => {
     )
 }
 
+const ComingSponsorTeams = () => {
+
+     const cards = [
+    {
+      title: "Sponsors & Partners",
+      icon: <Handshake className="text-purple-400" size={32} />,
+      desc: "Boeing and many other household companies are being contacted, with an estimated funding of over $20,000 and multiple sponsored mini-events.",
+      delay: 0.1
+    },
+  ];
+
+    return(
+    <section className="py-24 px-6 relative z-10" id="sponsors">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-arcade-neon/70 text-sm font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2">
+            <span className="w-2 h-2 bg-arcade-neon rounded-full animate-pulse"></span>
+            System Loading to Feb 2026
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-2">
+            Sponsors & Partners Coming Soon
+          </h2>
+        </div>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <img src="sponsors/boeing.webp" className="w-full h-auto rounded-2xl hover:scale-102 transition-all duration-300" alt="" />
+          {cards.map((card, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: card.delay, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="group relative bg-arcade-800/40 border border-white/5 rounded-2xl p-8 hover:border-arcade-neon/30 transition-all duration-300 hover:bg-arcade-800/60 hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.15)] overflow-hidden"
+            >
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-arcade-neon/50 transition-all duration-500"></div>
+              
+              <div className="flex items-start justify-between mb-6">
+                <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-white/10 transition-colors">
+                   {card.icon}
+                </div>
+                <div className="text-white/20 group-hover:text-arcade-neon transition-colors">
+                  <Lock size={20} />
+                </div>
+              </div>
+
+              <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-arcade-100 transition-colors">
+                {card.title}
+              </h3>
+              
+              <p className="text-arcade-100/60 text-sm leading-relaxed font-sans">
+                {card.desc}
+              </p>
+
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+    )
+}
+
 function MainPage() {
     const [openIndex, setOpenIndex] = useState(null);
     return (
@@ -991,7 +1054,7 @@ function MainPage() {
                                     <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
                                         <Calendar className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
                                         <span className="tracking-wide">
-                                            FEB 13-15 2026
+                                            FEB 20-22 2026
                                         </span>
                                     </div>
 
@@ -1047,7 +1110,8 @@ function MainPage() {
                 <AboutSection />
                 <TracksSection />
                 <PrizesSection />
-                <SponsorsSection />
+                <ComingSponsorTeams />
+                {/* <SponsorsSection /> */}
                 {/* <ComingSoonSection /> */}
                 <SignUpSection />
                 <section className="py-24 px-6 relative z-10" id="faqs">
@@ -1078,7 +1142,7 @@ function MainPage() {
                         </div>
                     </div>
                 </section>
-                                <TeamSection />
+                                {/* <TeamSection /> */}
             </div>
 
             <footer className="bg-arcade-950 py-8 border-t border-white/15 relative z-20 bg-gray-800/50">

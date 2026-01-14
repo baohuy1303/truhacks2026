@@ -74,7 +74,7 @@ export const Navbar = () => {
                         onClick={() => scrollToSection('faqs')}
                     />
                     <NavLink
-                        text="Team"
+                        text="Credits"
                         onClick={() => scrollToSection('team')}
                     />
                 </div>
@@ -129,7 +129,7 @@ export const Navbar = () => {
                             onClick={() => scrollToSection('faqs')}
                         />
                         <MobileNavLink
-                            text="Team"
+                            text="Credits"
                             onClick={() => scrollToSection('team')}
                         />
                         <button
