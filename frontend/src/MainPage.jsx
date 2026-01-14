@@ -58,7 +58,7 @@ const AboutSection = () => {
                         .
                     </h2>
                     <p className="text-arcade-100/70 text-base sm:text-lg leading-relaxed mb-6 font-sans">
-                        TruHacks is a 36-hour creative marathon where students
+                        TruHacks is a 48-hour creative marathon where students
                         from across the country gather to build the
                         extraordinary. Whether you're a seasoned developer or a
                         first-time hacker, grab a joystick and start building.
@@ -66,7 +66,7 @@ const AboutSection = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
                         <Feature
                             icon={<Terminal className="text-arcade-neon" />}
-                            title="36 Hours"
+                            title="48 Hours"
                             desc="Non-stop coding & creation"
                         />
                         <Feature
@@ -165,7 +165,7 @@ const Feature = ({ icon, title, desc }) => (
 const tracks = [
     {
         title: 'Developer',
-        desc: 'Build your project from scratch over 36 hours. Bring your ideas to life with code, collaborate with teammates, and compete for technical awards.',
+        desc: 'Build your project from scratch over 48 hours. Bring your ideas to life with code, collaborate with teammates, and compete for technical awards.',
         icon: <Code size={32} className="text-red-400" />,
         color: 'border-red-500/30 hover:border-red-500',
         bg: 'from-red-900/20 to-transparent',
