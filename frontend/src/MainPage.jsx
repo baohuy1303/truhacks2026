@@ -767,7 +767,7 @@ const GlitchText = ({
 const faqs = [
     {
     question: "What is TruHacks?",
-    answer: "TruHacks is an annual 36-hour hackathon at Truman State University conducted by GDG & CCE. This event promotes innovation and entrepreneurship on campus. "
+    answer: "TruHacks is an annual 48-hour hackathon at Truman State University conducted by GDG & CCE. This event promotes innovation and entrepreneurship on campus. "
   },
   {
     question: "Who can participate?",
@@ -1160,7 +1160,7 @@ function MainPage() {
 
                         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
                             <a
-                                href="https://www.instagram.com/gdsc_tsu/"
+                                href="https://www.instagram.com/boeingxtruhacks/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
@@ -1194,6 +1194,18 @@ function MainPage() {
                                     className="w-4 h-4"
                                 />{' '}
                                 LinkedIn
+                            </a>
+                            <a
+                                href="https://www.instagram.com/gdsc_tsu/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
+                            >
+                                <FontAwesomeIcon
+                                    icon={faCode}
+                                    className="w-4 h-4"
+                                />{' '}
+                                GDG
                             </a>
                             <a
                                 href="https://www.instagram.com/ccetruman/"
