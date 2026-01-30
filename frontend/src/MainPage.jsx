@@ -35,6 +35,7 @@ const AboutSection = () => {
         <section
             id="about"
             className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto"
+            style={{ contentVisibility: 'auto', containIntrinsicHeight: '600px' }}
         >
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
                 {/* Left: Text Content */}
@@ -188,7 +189,7 @@ const tracks = [
 
 const TracksSection = () => {
     return (
-        <section id="tracks" className="py-12 sm:py-16 md:py-24 relative">
+        <section id="tracks" className="py-12 sm:py-16 md:py-24 relative" style={{ contentVisibility: 'auto', containIntrinsicHeight: '800px' }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div className="text-center mb-8 sm:mb-16">
                     <span className="text-arcade-neon text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
@@ -235,6 +236,7 @@ const PrizesSection = () => {
         <section
             id="prizes"
             className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden"
+            style={{ contentVisibility: 'auto', containIntrinsicHeight: '700px' }}
         >
             {/* Background Decorative Grid */}
 
@@ -646,7 +648,7 @@ const GlitchText = ({
             // Initial state: Invisible and distorted
             await animate(
                 scope.current,
-                { opacity: 0, scale: 0.9, filter: 'blur(10px)' },
+                { opacity: 0, scale: 0.9, filter: 'blur(10px)', x: 0, y: 0, skewX: 0 },
                 { duration: 0 }
             );
 
@@ -657,20 +659,18 @@ const GlitchText = ({
             // Step 1: Flash in with high skew and blur
             animate(scope.current, { opacity: 1 }, { duration: 0.1 });
 
-            // Rapid random glitch frames
-            const loops = subtle ? 3 : 5;
+            // Rapid random glitch frames - Reduced complexity for performance
+            const loops = subtle ? 2 : 3;
             for (let i = 0; i < loops; i++) {
                 await animate(
                     scope.current,
                     {
-                        skewX: Math.random() * 20 - 10,
-                        x: Math.random() * 10 - 5,
-                        scale: 1 + Math.random() * 0.1,
-                        filter: `blur(${Math.random() * 2}px) hue-rotate(${
-                            Math.random() * 90
-                        }deg)`,
+                        skewX: Math.random() * 10 - 5,
+                        x: Math.random() * 6 - 3,
+                        scale: 1 + Math.random() * 0.05,
+                        filter: `blur(${Math.random() * 1.5}px)`,
                     },
-                    { duration: 0.05 }
+                    { duration: 0.04 }
                 );
             }
 
@@ -705,6 +705,7 @@ const GlitchText = ({
             <motion.span
                 ref={scope}
                 className={`relative inline-block ${className} z-10`}
+                style={{ willChange: 'transform, filter, opacity' }}
             >
                 {text}
             </motion.span>
@@ -923,7 +924,7 @@ const ComingSponsorTeams = () => {
   ];
 
     return(
-    <section className="py-24 px-6 relative z-10" id="sponsors">
+    <section className="py-24 px-6 relative z-10" id="sponsors" style={{ contentVisibility: 'auto', containIntrinsicHeight: '400px' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-arcade-neon/70 text-sm font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2">
@@ -986,7 +987,7 @@ function MainPage() {
                     <ParallaxBannerLayer
                         image="midg-dark_webp_test1.webp"
                         speed={-10}
-                        /* className="brightness-[0.6] drop-shadow-2xl" */
+                        style={{ willChange: 'transform' }}
                     />
 
                     {/* <ParallaxBannerLayer 
@@ -1001,6 +1002,7 @@ function MainPage() {
                         image="dust-1.png"
                         speed={60}
                         opacity={[1, 0.1]}
+                        style={{ willChange: 'transform, opacity' }}
                     />
 
                     <ParallaxBannerLayer
@@ -1008,6 +1010,7 @@ function MainPage() {
                         scale={[0.8, 1.2]}
                         translateY={[-50, 30]}
                         className="z-20 flex items-center justify-center pointer-events-none"
+                        style={{ willChange: 'transform' }}
                     >
                         <div className="text-center px-4 max-w-5xl pt-[20vh] md:pt-[5vh] pointer-events-auto">
                             <motion.div
@@ -1114,7 +1117,7 @@ function MainPage() {
                 {/* <SponsorsSection /> */}
                 {/* <ComingSoonSection /> */}
                 <SignUpSection />
-                <section className="py-24 px-6 relative z-10" id="faqs">
+                <section className="py-24 px-6 relative z-10" id="faqs" style={{ contentVisibility: 'auto', containIntrinsicHeight: '600px' }}>
                     <div className="max-w-3xl mx-auto">
                         <div className="text-center mb-16">
                             <span className="text-arcade-neon text-sm font-bold tracking-[0.2em] uppercase">
