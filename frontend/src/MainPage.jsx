@@ -926,49 +926,22 @@ const ComingSponsorTeams = () => {
     return(
     <section className="py-24 px-6 relative z-10" id="sponsors" style={{ contentVisibility: 'auto', containIntrinsicHeight: '400px' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-arcade-neon/70 text-sm font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2">
-            <span className="w-2 h-2 bg-arcade-neon rounded-full animate-pulse"></span>
-            System Loading to Feb 2026
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-2">
-            Sponsors & Partners Coming Soon
-          </h2>
-        </div>
+        <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-8 sm:mb-16 text-center"
+                >
+                    <span className="text-arcade-neon text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
+                        Powered By
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mt-2">
+                        Our Sponsors & Partners
+                    </h2>
+                </motion.div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            <img src="sponsors/boeing.webp" className="w-full h-auto rounded-2xl hover:scale-102 transition-all duration-300" alt="" />
-          {cards.map((card, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: card.delay, duration: 0.5 }}
-              viewport={{ once: true }}
-              className="group relative bg-arcade-800/40 border border-white/5 rounded-2xl p-8 hover:border-arcade-neon/30 transition-all duration-300 hover:bg-arcade-800/60 hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.15)] overflow-hidden"
-            >
-              {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-arcade-neon/50 transition-all duration-500"></div>
-              
-              <div className="flex items-start justify-between mb-6">
-                <div className="p-3 bg-white/5 rounded-xl border border-white/5 group-hover:border-white/10 transition-colors">
-                   {card.icon}
-                </div>
-                <div className="text-white/20 group-hover:text-arcade-neon transition-colors">
-                  <Lock size={20} />
-                </div>
-              </div>
-
-              <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-arcade-100 transition-colors">
-                {card.title}
-              </h3>
-              
-              <p className="text-arcade-100/60 text-sm leading-relaxed font-sans">
-                {card.desc}
-              </p>
-
-            </motion.div>
-          ))}
+        <div className="max-w-5xl mx-auto">
+            <img src="sponsors/sponsors_webp.webp" className="mx-auto h-full md:h-[450px] rounded-2xl hover:scale-102 transition-all duration-300" alt="" />
         </div>
       </div>
     </section>
@@ -1114,7 +1087,7 @@ function MainPage() {
                 <TracksSection />
                 <PrizesSection />
                 <ComingSponsorTeams />
-                {/* <SponsorsSection /> */}
+{/*                 <SponsorsSection /> */}
                 {/* <ComingSoonSection /> */}
                 <SignUpSection />
                 <section className="py-24 px-6 relative z-10" id="faqs" style={{ contentVisibility: 'auto', containIntrinsicHeight: '600px' }}>
