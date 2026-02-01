@@ -1163,7 +1163,7 @@ function MainPage() {
 
                         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
                             <a
-                                href="https://www.instagram.com/boeingxtruhacks/"
+                                href="https://www.instagram.com/truhacks_truman/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-arcade-100/60 hover:text-arcade-neon transition-colors flex items-center gap-1.5 text-sm sm:text-base"
