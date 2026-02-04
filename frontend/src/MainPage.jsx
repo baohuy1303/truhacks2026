@@ -1030,7 +1030,7 @@ function MainPage() {
                                     <div className="group flex items-center gap-3 bg-black/60 px-6 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:border-purple-500/50 transition-colors">
                                         <Calendar className="w-4 h-4 text-purple-400 group-hover:text-purple-300" />
                                         <span className="tracking-wide">
-                                            FEB 20-22 2026
+                                            MARCH 20-22 2026
                                         </span>
                                     </div>
 
