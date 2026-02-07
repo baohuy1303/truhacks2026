@@ -235,7 +235,7 @@ const PrizesSection = () => {
     return (
         <section
             id="prizes"
-            className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden"
+            className="py-10 sm:py-14 px-4 sm:px-6 relative overflow-hidden"
             style={{ contentVisibility: 'auto', containIntrinsicHeight: '700px' }}
         >
             {/* Background Decorative Grid */}
@@ -248,6 +248,7 @@ const PrizesSection = () => {
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mt-2">
                         Winner Prizes
                     </h2>
+
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-6 sm:gap-8 justify-center items-center md:items-end">
@@ -319,6 +320,9 @@ const PrizesSection = () => {
                     />
                 </div>
             </div>
+            <motion.p initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} viewport={{ once: true }} className="mt-5 text-center text-arcade-100/60 text-xs sm:text-sm leading-relaxed">
+                *Tax not included
+            </motion.p>
         </section>
     );
 };
